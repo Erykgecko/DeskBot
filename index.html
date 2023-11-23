@@ -29,7 +29,7 @@
   <p>Last value sent: <span id="valueSent"></span></p>
   
   <p><input type="range" min="1" max="100" value="50" class="slider" id="myRange"></p>
-  <p>V1.0.1</p>
+  <p>V1.0.2</p>
   <p><a href="https://randomnerdtutorials.com/">Created by RandomNerdTutorials.com</a></p>
   <p><a href="https://RandomNerdTutorials.com/esp32-web-bluetooth/">Read the full project here.</a></p>
 </body>
@@ -170,8 +170,8 @@
                 return characteristic.writeValue(sdata);
             })
             .then(() => {
-                latestValueSent.innerHTML = this.value;
-                console.log("Value written to Slidercharacteristic:", this.value);
+                latestValueSent.innerHTML = sdata;
+                console.log("Value written to Slidercharacteristic:", sdata);
             })
             .catch(error => {
                 console.error("Error writing to the slider characteristic: ", error);
