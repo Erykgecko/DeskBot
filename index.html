@@ -166,8 +166,8 @@
             bleServiceFound.getCharacteristic(sliderCharacteristic)
             .then(characteristic => {
                 console.log("Found the Slider characteristic: ", characteristic.uuid);
-                const data = new Uint8Array(this.value);
-                return characteristic.writeValue(data);
+                const sdata = new Uint8Array(this.value);
+                return characteristic.writeValue(sdata);
             })
             .then(() => {
                 latestValueSent.innerHTML = this.value;
